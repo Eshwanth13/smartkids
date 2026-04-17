@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { 
-  Rocket, ShieldCheck, Sparkles, BookOpen, Calculator, Globe2, 
-  ArrowRight, Heart, Star, Layout, Zap, Users, Brain, Mic, 
+  Rocket, ShieldCheck, Sparkles, Globe2, 
+  Heart, Star, Layout, Zap, Users, Brain, Mic, 
   Clock, CheckCircle2, XCircle
 } from 'lucide-react';
 import Starfield from '../components/Starfield';

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGameStore } from '../store/useGameStore';
 import Mascot from '../components/Mascot';
-import { Heart, Loader2, RotateCcw } from 'lucide-react';
+import { Heart, Loader2 } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import api from '../services/api';
 import { useAuthStore } from '../store/useAuthStore';
@@ -61,7 +61,6 @@ const GamePage: React.FC = () => {
     isLevelComplete,
     setQuestions,
     resetLevel,
-    score,
     mistakesInCurrentQuestion,
   } = useGameStore();
 

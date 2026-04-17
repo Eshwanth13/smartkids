@@ -29,6 +29,7 @@ export const useGameStore = create<GameState>((set) => ({
   isLevelComplete: false,
   questions: [],
   currentQuestionIndex: 0,
+  mistakesInCurrentQuestion: 0,
 
   setQuestions: (questions) => set({
     questions,

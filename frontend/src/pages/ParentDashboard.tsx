@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
 import {
-  TrendingUp, Loader2, Star, Trash2, Key, Users, Plus,
+  Loader2, Star, Trash2, Key, Plus,
   Target, Award, BookOpen, Calculator, Globe2, BarChart3, RotateCcw
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
