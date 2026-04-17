@@ -21,8 +21,9 @@ const Signup: React.FC = () => {
       await api.post('/auth/register-parent', { name, email, password });
       setSuccess(true);
       setTimeout(() => navigate('/login'), 2000);
-    } catch {
-      setError('Registration failed. This email may already be in use.');
+    } catch (err: any) {
+      const msg = err.response?.data?.message || 'Registration failed. Please check your connection.';
+      setError(msg);
     } finally {
       setLoading(false);
     }
