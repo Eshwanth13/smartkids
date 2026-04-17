@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Outfit:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global Reset & Base ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0F172A;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Remove flex centering from body — pages control their own layout */
+body {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ── Design Tokens ───────────────────────────────────── */
+/* (Tailwind config handles colors, these are utility overrides) */
+
+/* ── Glass Card ──────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+.kid-button {
+  @apply px-6 py-3 sm:px-8 sm:py-4 rounded-3xl font-bold transition-all duration-300 active:scale-95 shadow-lg hover:shadow-2xl text-lg sm:text-xl cursor-pointer select-none;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 0.05em;
+}
+
+.kid-button-primary {
+  @apply bg-kids-purple text-white hover:bg-kids-purple-dark border-b-[6px] border-kids-purple-dark;
+}
+
+.kid-button-success {
+  @apply bg-kids-green text-white hover:bg-kids-green-dark border-b-[6px] border-kids-green-dark;
+}
+
+.kid-button-warning {
+  @apply bg-kids-yellow text-white hover:bg-kids-yellow-dark border-b-[6px] border-kids-yellow-dark;
+}
+
+/* ── Inputs ──────────────────────────────────────────── */
+.kid-input {
+  @apply bg-white/10 border-2 border-white/20 rounded-2xl px-4 py-3 sm:px-6 sm:py-4
+         text-white placeholder-white/40 focus:outline-none focus:border-kids-purple
+         transition-all text-base sm:text-lg w-full;
+}
+
+/* Light-mode input (for parent dashboard forms) */
+.kid-input-light {
+  @apply bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-3 sm:px-6 sm:py-4
+         text-slate-800 placeholder-slate-400 focus:outline-none focus:border-kids-purple
+         transition-all text-base sm:text-lg w-full;
+}
+
+/* ── Animations ──────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX( 6px); }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-shake { animation: shake 0.4s ease-in-out; }
+
+/* ── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.4); border-radius: 99px; }
+
+/* ── Page utilities ──────────────────────────────────── */
+.page-space {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0F172A;
+}
+
+.page-light {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
