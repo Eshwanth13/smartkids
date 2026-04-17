@@ -99,6 +99,8 @@ export const completeLevel = async (req: AuthRequest, res: Response) => {
       level = await Level.findById(levelId);
     }
 
+    if (!level) return res.status(404).json({ message: 'Level not found' });
+
     // Update stats
     child.xp = (child.xp || 0) + (xpEarned || 50);
     child.coins = (child.coins || 0) + (coinsEarned || 20);
