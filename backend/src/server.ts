@@ -1,14 +1,14 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
-import dotenv from 'dotenv';
 import connectDB from './config/db';
 import authRoutes from './routes/authRoutes';
 import gameRoutes from './routes/gameRoutes';
 import parentRoutes from './routes/parentRoutes';
-
-
-dotenv.config();
+import analyticsRoutes from './routes/analyticsRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -42,6 +42,8 @@ app.use(express.json());
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/game', gameRoutes);
 app.use('/api/v1/parent', parentRoutes);
+app.use('/api/v1/analytics', analyticsRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 
 // Basic Route

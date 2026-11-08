@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import { useAuthStore } from '../store/useAuthStore';
 import Navbar from '../components/Navbar';
+import AiInsightsCard from '../components/AiInsightsCard';
 
 const ParentDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -286,6 +287,11 @@ const ParentDashboard: React.FC = () => {
                   </div>
                 ) : <EmptyState text="Start your adventure to build proficiency" />}
               </div>
+            </div>
+
+            {/* AI Insights */}
+            <div className="mt-10">
+              <AiInsightsCard childId={selectedChild._id} />
             </div>
           </div>
         )}

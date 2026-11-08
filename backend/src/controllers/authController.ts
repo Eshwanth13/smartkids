@@ -26,7 +26,7 @@ export const registerParent = async (req: Request, res: Response) => {
   });
 
   if (user) {
-    res.status(201).json({
+    res.status(201).json({  
       _id: user._id,
       name: user.name,
       email: user.email,
